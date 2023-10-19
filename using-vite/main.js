@@ -17,7 +17,8 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setSize(window.innerWidth, window.innerHeight);
 
-const geometery = new THREE.BoxGeometry(1, 1, 1);
+// const geometery = new THREE.BoxGeometry(2, 0.5, 2);
+const geometery = new THREE.ConeGeometry(1, 2, 5, 3, true);
 
 const material = new THREE.MeshBasicMaterial({ color: "red" });
 
@@ -25,7 +26,6 @@ const cube = new THREE.Line(geometery, material);
 
 scene.add(cube);
 
-// renderer.render(scene, camera);
 let theta = 0.1;
 function animate() {
   requestAnimationFrame(animate);
