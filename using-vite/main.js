@@ -26,21 +26,11 @@ const cube = new THREE.Line(geometery, material);
 scene.add(cube);
 
 // renderer.render(scene, camera);
-let flag = true;
+let theta = 0.1;
 function animate() {
   requestAnimationFrame(animate);
 
-  if (cube.position.x > 3) {
-    flag = false;
-  } else if (cube.position.x < -3) {
-    flag = true;
-  }
-
-  if (flag) {
-    cube.position.x += 0.05;
-  } else {
-    cube.position.x -= 0.05;
-  }
+  cube.position.x = 3 * Math.sin((theta += 0.03));
 
   cube.rotation.x += 0.01;
   cube.rotation.y += 0.01;
